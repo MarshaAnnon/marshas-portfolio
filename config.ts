@@ -1,5 +1,5 @@
 const siteMetadata = {
-    title: `Elemental`,
+    title: `Hi, I'm Marsha!`,
     siteUrl: `http://localhost`,
     capitalizeTitleOnHome: false,
     logo: `/images/logo.png`,
@@ -8,7 +8,7 @@ const siteMetadata = {
     ogImage: `/images/wall.png`,
     twoColumnWall: true,
     cookiePolicy: true,
-    introTag: `PHOTOGRAPHER | VIDEOGRAPHER`,
+    introTag: `Web developer/Software Engineer`,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
     about:
         "Cras accumsan a lectus at tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus elementum dapibus dictum. Mauris auctor quam nec est tincidunt hendrerit. Donec pulvinar lobortis mauris. Cras vulputate ullamcorper ligula a rhoncus. Nunc venenatis elementum ligula in semper. Mauris malesuada purus nunc, et ultricies leo aliquam ac. Ut sit amet nunc id magna accumsan hendrerit in eget metus.",
@@ -44,40 +44,31 @@ const siteMetadata = {
             name: "PRIVACY POLICY",
             url: "/privacy-policy",
         },
-        {
-            name: "GitHub",
-            url: "https://github.com/akzhy/gatsby-starter-elemental",
-        },
     ],
     social: [
         {
-            name: "Facebook",
-            icon: "/images/Facebook.svg",
-            url: "#",
+            name: "GitHub",
+            icon: "/images/GitHub.svg",
+            url: "https://https://github.com/MarshaAnnon",
+        },
+        {
+            name: "LinkedIn",
+            icon: "/images/LinkedIn.svg",
+            url: "https://www.linkedin.com/in/marshacodes/",
         },
         {
             name: "Twitter",
             icon: "/images/Twitter.svg",
-            url: "#",
-        },
-        {
-            name: "Instagram",
-            icon: "/images/Instagram.svg",
-            url: "#",
-        },
-        {
-            name: "Youtube",
-            icon: "/images/Youtube.svg",
-            url: "#",
+            url: "/https://twitter.com/MarshaCodes",
         },
     ],
     contact: {
         // leave empty ('') or false to hide form
         api_url: "https://getform.io/f/f227a36e-096a-4c6a-9963-9f1918a85bb3",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-        mail: "hi@akzhy.com",
-        phone: "000-000-0000",
-        address: "1234 \nLocation \nLocation",
+        description: `Let's schedule a chat. I'd love to learn more about you & your specific needs.`,
+        mail: "marshaannon@gmail.com",
+        phone: "646-379-6819",
+        address: "NYC, New York",
     },
     disqus: "elemental-netlify-com",
 }
@@ -107,7 +98,7 @@ const beforeContactFormSubmit = data => {
     if (data.message.trim().length < 15) {
         errors.push({
             code: 3,
-            message: "Enter a message with atleast 15 characters",
+            message: "Enter a message with at least 15 characters",
         })
     }
 
