@@ -1,17 +1,77 @@
 ---
-title: Concerts
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-date: 2019-06-28
+title: Goalify
+description: Design your life by writing goals. I developed an app that encourages users to create the life they wanted rather than letting life dictate their journey for them.
+date: 2019-07-28
 image: ./image.jpg
-banner: ./banner.jpg
+banner: ./goals.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## React-Redux on Rails
+The final project for Flatiron School was to create an app using a React-Redux frontend and a Rails API for the backend. This was an extremely challenging task as I thought it would be, and so rewarding to finish knowing that everything I had learned over the past 20 weeks was finally coming together.  
+***
+Whilst looking around for ideas, I came across a poster that listed out life goals into categories or topics and I felt inspired. I thought it would be a nice idea to have an App with different topics that you could add goals to and so Goalify was born. I always love to build things that I can envision growing and evolving as time goes by and with Goalify.
+
+
+When a user signs up to Goalify they receive 9 topics prefilled with 10 ideas for goals to achieve. I won't bore you with a list of all the goals, for that you can check out my repo which I will link at the end of this blog, the topics however are:
+Personal Development
+Finance
+Travel
+Lifestyle
+Career
+Friends & Family
+Giving Back/Legacy
+Hobbies & Passions
+Adventure
+The relationships I settled on were:
+A user has_many topics
+A user has_many goals, through topics
+A topic has_many goals
+A topic belongs_to a user
+A goal belongs_to a topic
+I decided I want to create my own user authentication rather than using the devise gem or omniauth, which was really fun as it was the first time thinking about how that would work between the frontend and back, I had a few bumps along the way, luckily a fellow student told me about an awesome video series that was thorough and I learned a lot about the process.
+
+I needed to think about how my objects would be passed between my Rails backend and React-Redux frontend. For my previous project, I used Active Model Serializer, this time though I wanted to try something different, so I opted for the Fast JSON API, which allowed me to clean up the code in my controllers and to format my JSON object so I could select only the information I wanted to pass through as well as get access to the relationships I had laid out in my models. As a topic has many goals, and I wanted the goals I had seeded to pass through with the topics to the frontend, I choose to add the goals as an attribute of topics. I'm not sure this is how I will do it going forward as I realized in adding goals as an attribute I am allowing all of the goals and there attributes to be passed through and have little control over the data, but for the purposes of this project, it was okay. In the future, I would like to look more at the Fast JSON API docs to see how I can better control the data being passed around through the relationship.
+
+I created a seed file: db/seeds.rb
+
+Uncommented cors in my gemfile & ran bundle install. I also uncommented cors in config/initializers/cors.rb and set origins to http://localhost:3001. 
+
+Created controllers for: 
+users
+sessions
+topics
+goals
+One thing that was different here to my previous projects was that my controllers are under app/controllers/api/v1 because I am using REST API Versioning, which is a good practice as it helps to iterate faster when inevitable future changes are needed, managing changes can be challenging and this practice is the safest way to ensure little breaks when introducing updates.
+
+Once I got my relationships to work and, my backend was all set and it was time to start thinking about the frontend. 
+
+The requirements my application would have to meet were to have one HTML page to render your react-redux application, at least 2 container components, 5 stateless components, make use of react-router and proper RESTful routing and 3 routes using fetch within the actions to GET and POST data to and from the Rails API. Redux Thunk should be used to send data to and receive data from a server and to respond to and modify changes in state.
+
+In order to achieve this, I really need to think about how all the information would be passed around. For example, what would the flow of information be if a user filled out a form and clicked a button to create a new topic, would I need to make use of React's lifecycle methods? How much of my App did I want to be handled by Redux & how much by React?
+
+First I started to think about the pieces of my puzzle to make sure I understood the role each would play in me building my application. 
+
+Presentational and Container Components.
+
+There are two types of components in Redux: Presentational and Container Components.
+the purpose of Presentational Components is how things look and rendering things to the browser, they tend to be stateless and can read data passed down through props and invoke callbacks from props. Container components, on the other hand, are concerned with how things work, so they are responsible for data fetching and state updates. This was important to understand in order to meet the first two requirements. With this in mind, I was able to jot down a list of possible presentation components and possible stateful containers.
+
+RESTful routing
+
+REST (Representational State Transfer) is the convention of matching URL requests with their representational view or page. For example, if you wanted to edit your profile page, the URL would read something like - https://website/me/edit. When working with a single-page application this can be a little tricky, however, BrowserRouter from React makes this task a lot simpler. To make use of react-router and RESTful routing, I needed to install: yarn add react-router-dom I then imported BrowserRouter which I aliased as Router and wrapped it around my App.js. I used my knowledge of rails as a guide when creating new paths and also utilized rails/info/routes in the browser as a source.
+
+Redux Thunk
+
+Thunk, I have learned is another word for function, it's a special name for a function that is returned by another function, like a callback function in JavaScript. Redux Thunk is middleware that makes use of this callback concept but in an abstract way. Thunk looks at every action that passes through the engine, and if comes across a function, it calls that function. Two arguments are passed to Thunk functions, dispatch, so they can dispatch new actions and getState, so they can access the current state. As you'll see if you check out my repo (which I will link at the end of this blog), I have mainly used Thunk to dispatch new actions.
+
+This project was a challenge, one of the personal lessons I learned was that I have a tendency to add complexity rather than to simplify and that keeping things simple is a skill I need to work on. From a professional/student standpoint, coming to the end of my Flatiron journey I can see I have come so far in such a short period of time. I have had a blast, and I am excited to continue my pursuit to be the best software engineer I can be, trying to be better every day.
+
+
 
 <Row>
 <Col>
 
-![image](./b1.jpg)
+![image](./goals.png)
 
 </Col>
 <Col>
