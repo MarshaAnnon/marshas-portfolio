@@ -8,11 +8,11 @@ const siteMetadata = {
     ogImage: `/images/wall.png`,
     twoColumnWall: true,
     cookiePolicy: true,
-    introTag: `Web developer/Software Engineer`,
-    description: `Intuitive Communicator, INTP | Full Stack / Front End Developer`,
+    introTag: `Web developer | Software Engineer`,
+    description: `Intuitive Communicator, INTP | Full-Stack | Front-End`,
     about:
         "Software engineer with an understanding of Front-end and Back-end languages. I merge my passion for user experience with my technical knowledge to produce unique digital experiences. I am at my best when finding creative solutions to difficult problems. I believe my background in education and entrepreneurship will assist in adding value to any team I join.",
-    author: `@_akzhy`,
+    author: `@marshacodes`,
     blogItemsPerPage: 10,
     portfolioItemsPerPage: 10,
     darkmode: true,
@@ -70,7 +70,7 @@ const siteMetadata = {
         phone: "646-379-6819",
         address: "NYC, New York",
     },
-    disqus: "elemental-netlify-com",
+    disqus: "marsha-annon-com",
 }
 
 const beforeContactFormSubmit = data => {
