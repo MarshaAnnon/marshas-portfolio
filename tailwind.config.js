@@ -23,14 +23,14 @@ module.exports = {
         }),
         themes: {
             dark: {
-                bg: "#111",
+                bg: "#031D24",
                 bgalt: "#000",
-                "color-default": "#eee",
-                "color-1": "#c35fde",
+                "color-default": "#031D24",
+                "color-1": "#FFFEF1",
                 "color-2": "#adbfef",
                 border: "#718096",
                 primary: "#f55555",
-                medium: "#222"
+                medium: "#021010"
             },
         },
         colors: {
